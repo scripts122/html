@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <title>Examen Inloggen</title>
+  <style>
+    body {
+      background: #f4f4f4;
+      font-family: Arial, sans-serif;
+    }
+    .login-container {
+      width: 320px;
+      margin: 100px auto;
+      background: #fff;
+      padding: 32px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px #aaa;
+      text-align: center;
+    }
+    .logo {
+      width: 80px;
+      margin-bottom: 16px;
+    }
+    input {
+      display: block;
+      width: 90%;
+      margin: 12px auto;
+      padding: 10px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+    }
+    button {
+      width: 100%;
+      padding: 10px;
+      background: #0072c6;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .success {
+      color: green;
+      margin-top: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png" alt="School Logo" class="logo">
+    <h2>Examen Inloggen</h2>
+    <form id="loginForm">
+      <input type="text" name="username" placeholder="Gebruikersnaam" required>
+      <input type="password" name="password" placeholder="Wachtwoord" required>
+      <button type="submit">Inloggen</button>
+    </form>
+    <div class="success" id="msg"></div>
+  </div>
+  <script>
+    document.getElementById('loginForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      // hier zou je normaal fetch() of POST doen naar PHP, maar dat kan niet op GitHub
+      document.getElementById('msg').innerText = 'Inloggen gelukt. Je wordt doorgestuurd...';
+      setTimeout(function(){
+        window.location.href = 'https://examenblad.nl'; // fake redirect
+      }, 2000);
+    });
+  </script>
+</body>
+</html>
